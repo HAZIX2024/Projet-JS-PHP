@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../Models/Etudiant.php';
+require_once __DIR__ . '/../Models/Etudiant.php';
 require_once __DIR__ . '/../../config/database.php';
 
 $etudiant = new Etudiant($pdo);
@@ -12,7 +12,7 @@ if(isset($_POST['add'])) {
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
 
-    $etudiant->add($nom, $prenom, $email);
+    $etudiant->create($nom, $prenom, $email,$date_naissance);
 
     header("Location: ../views/index.php");
 }
